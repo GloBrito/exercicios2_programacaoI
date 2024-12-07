@@ -8,6 +8,7 @@ import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
 import com.modelagem.modelo.Filme;
+import com.modelagem.modelo.Gato;
 
 
 public class Main {
@@ -22,6 +23,7 @@ public class Main {
         Inseto inseto = new Inseto("Borboleta", 2.5, 6);
         Planta planta = new Planta("Ficus lyrata", 2.0, "Florífera");
         Filme filme = new Filme("O Senhor dos Anéis", "Fantasia", 180);
+        Gato gato = new Gato("Mingau", 3, "Branco");
 
 
         //teste dos métodos das classes
@@ -33,6 +35,7 @@ public class Main {
         testarInseto(inseto);
         testarPlanta(planta);
         testarFilme(filme);
+        testarGato(gato);
 
 
     }
@@ -90,5 +93,12 @@ public class Main {
         filme.exibirInformacoes();
         filme.reproduzir();
         filme.avaliar(8.5);
+    }
+    //metodo para testar a classe Gato
+    public static void testarGato(Gato gato) {
+        System.out.println("\nTestando a classe Gato:");
+        gato.miar();
+        gato.brincar();
+        gato.comer("ração");
     }
 }
