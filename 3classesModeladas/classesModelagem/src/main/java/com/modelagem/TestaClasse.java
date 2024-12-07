@@ -6,6 +6,9 @@ import com.modelagem.modelo.Catedral;
 import com.modelagem.modelo.Pintura;
 import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
+import com.modelagem.modelo.Planta;
+
+import java.util.Scanner;
 
 
 import java.util.Scanner;
@@ -22,6 +25,7 @@ public class TestaClasse {
         Pintura pintura = new Pintura("verde", "látex", 40.0);
         Lustre lustre = new Lustre("vidro", 60, "dourado");
         Inseto inseto = new Inseto("Formiga", 0.01, 6);
+        Planta planta = new Planta("Rosa gallica", 1.2, "Florífera");
 
 
         int opcao;
@@ -33,8 +37,9 @@ public class TestaClasse {
             System.out.println("3. Testar Catedral");
             System.out.println("4. Testar Pintura");
             System.out.println("5. Testar Lustre");
-
-            System.out.println("6. Sair");
+            System.out.println("6. Testar Inseto");
+            System.out.println("7. Testar Planta");
+            System.out.println("8. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
@@ -59,12 +64,15 @@ public class TestaClasse {
                     testarInseto(inseto);
                     break;
                 case 7:
+                    testarPlanta(planta);
+                    break;
+                case 8:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 7);
+        } while (opcao != 8);
 
         scanner.close();
     }
@@ -106,5 +114,11 @@ public class TestaClasse {
         inseto.mover();
         inseto.emitirSom();
         inseto.alimentar("folhas");
+    }
+    //metodo para testar a classe Planta
+    public static void testarPlanta(Planta planta) {
+        planta.crescer(0.3);
+        planta.fazerFotossintese();
+        planta.produzirFlor();
     }
 }
