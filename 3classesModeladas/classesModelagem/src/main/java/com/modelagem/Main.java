@@ -9,7 +9,7 @@ import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
 import com.modelagem.modelo.Filme;
 import com.modelagem.modelo.Gato;
-
+import com.modelagem.modelo.Disciplina;
 
 public class Main {
 
@@ -24,6 +24,7 @@ public class Main {
         Planta planta = new Planta("Ficus lyrata", 2.0, "Florífera");
         Filme filme = new Filme("O Senhor dos Anéis", "Fantasia", 180);
         Gato gato = new Gato("Mingau", 3, "Branco");
+        Disciplina disciplina = new Disciplina("Matemática", 80, "Exatas");
 
 
         //teste dos métodos das classes
@@ -36,8 +37,7 @@ public class Main {
         testarPlanta(planta);
         testarFilme(filme);
         testarGato(gato);
-
-
+        testarDisciplina(disciplina);
     }
 
     //metodo para testar a classe Bolo
@@ -100,5 +100,13 @@ public class Main {
         gato.miar();
         gato.brincar();
         gato.comer("ração");
+    }
+    //metodo para testar a classe Disciplina
+    public static void testarDisciplina(Disciplina disciplina) {
+        System.out.println("\nTestando a classe Disciplina:");
+        disciplina.exibirInformacoes();
+        disciplina.associarProfessor("Professor João");
+        double notaFinal = disciplina.calcularNotaFinal();
+        System.out.println("Nota final calculada: " + notaFinal);
     }
 }
