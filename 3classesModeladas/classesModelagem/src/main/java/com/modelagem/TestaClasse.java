@@ -8,6 +8,7 @@ import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
 import com.modelagem.modelo.Filme;
+import com.modelagem.modelo.Gato;
 
 
 import java.util.Scanner;
@@ -29,6 +30,7 @@ public class TestaClasse {
         Inseto inseto = new Inseto("Formiga", 0.01, 6);
         Planta planta = new Planta("Rosa gallica", 1.2, "Florífera");
         Filme filme = new Filme("Matrix", "Ficção Científica", 136);
+        Gato gato = new Gato("Tom", 5, "Cinza");
 
 
         int opcao;
@@ -43,7 +45,8 @@ public class TestaClasse {
             System.out.println("6. Testar Inseto");
             System.out.println("7. Testar Planta");
             System.out.println("8. Testar Filme");
-            System.out.println("9. Sair");
+            System.out.println("9. Testar Gato");
+            System.out.println("10. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
@@ -74,12 +77,15 @@ public class TestaClasse {
                     testarFilme(filme);
                     break;
                 case 9:
+                    testarGato(gato);
+                    break;
+                case 10:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 9);
+        } while (opcao != 10);
 
         scanner.close();
     }
@@ -133,5 +139,11 @@ public class TestaClasse {
         filme.exibirInformacoes();
         filme.reproduzir();
         filme.avaliar(9.0);
+    }
+    //meodo para testar a classe Gato
+    public static void testarGato(Gato gato) {
+        gato.miar();
+        gato.brincar();
+        gato.comer("peixe");
     }
 }
