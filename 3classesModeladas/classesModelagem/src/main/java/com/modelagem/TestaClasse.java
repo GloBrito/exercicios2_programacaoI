@@ -4,6 +4,8 @@ import com.modelagem.modelo.Bolo;
 import com.modelagem.modelo.Caneta;
 import com.modelagem.modelo.Catedral;
 import com.modelagem.modelo.Pintura;
+import com.modelagem.modelo.Lustre;
+
 
 import java.util.Scanner;
 
@@ -17,6 +19,8 @@ public class TestaClasse {
         Caneta caneta = new Caneta("preta", "Faber-Castell", 0.5);
         Catedral catedral = new Catedral("Sagrada Família", "Barcelona", 12000);
         Pintura pintura = new Pintura("verde", "látex", 40.0);
+        Lustre lustre = new Lustre("vidro", 60, "dourado");
+
 
         int opcao;
         do {
@@ -26,7 +30,9 @@ public class TestaClasse {
             System.out.println("2. Testar Caneta");
             System.out.println("3. Testar Catedral");
             System.out.println("4. Testar Pintura");
-            System.out.println("4. Sair");
+            System.out.println("5. Testar Lustre");
+
+            System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
@@ -45,6 +51,9 @@ public class TestaClasse {
                     testarPintura(pintura);
                     break;
                 case 5:
+                    testarLustre(lustre);
+                    break;
+                case 6:
                     System.out.println("Saindo...");
                     break;
                 default:
@@ -79,5 +88,10 @@ public class TestaClasse {
         pintura.misturarCor("amarelo pastel");
         pintura.calcularCusto();
     }
-
+    //metodo para testar a classe Lustre
+    public static void testarLustre(Lustre lustre) {
+        lustre.acender();
+        lustre.ajustarBrilho(5);
+        lustre.apagar();
+    }
 }
