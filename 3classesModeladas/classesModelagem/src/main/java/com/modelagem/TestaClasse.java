@@ -3,6 +3,8 @@ package com.modelagem;
 import com.modelagem.modelo.Bolo;
 import com.modelagem.modelo.Caneta;
 import com.modelagem.modelo.Catedral;
+import com.modelagem.modelo.Pintura;
+
 import java.util.Scanner;
 
 public class TestaClasse {
@@ -14,6 +16,7 @@ public class TestaClasse {
         Bolo bolo = new Bolo("Morango", 25, 2.0);
         Caneta caneta = new Caneta("preta", "Faber-Castell", 0.5);
         Catedral catedral = new Catedral("Sagrada Família", "Barcelona", 12000);
+        Pintura pintura = new Pintura("verde", "látex", 40.0);
 
         int opcao;
         do {
@@ -22,6 +25,7 @@ public class TestaClasse {
             System.out.println("1. Testar Bolo");
             System.out.println("2. Testar Caneta");
             System.out.println("3. Testar Catedral");
+            System.out.println("4. Testar Pintura");
             System.out.println("4. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -38,12 +42,15 @@ public class TestaClasse {
                     testarCatedral(catedral);
                     break;
                 case 4:
+                    testarPintura(pintura);
+                    break;
+                case 5:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 4);
+        } while (opcao != 5);
     }
 
     //metodo para testar a classe Bolo
@@ -66,4 +73,11 @@ public class TestaClasse {
         catedral.tocarSinos();
         System.out.println("A catedral está aberta? " + catedral.aberto());
     }
+    //metodo para testar a classe Pintura
+    public static void testarPintura(Pintura pintura) {
+        pintura.aplicarTinta("teto");
+        pintura.misturarCor("amarelo pastel");
+        pintura.calcularCusto();
+    }
+
 }
