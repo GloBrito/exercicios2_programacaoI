@@ -7,6 +7,7 @@ import com.modelagem.modelo.Pintura;
 import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
+import com.modelagem.modelo.Filme;
 
 
 public class Main {
@@ -20,6 +21,7 @@ public class Main {
         Lustre lustre = new Lustre("vidro", 60, "dourado");
         Inseto inseto = new Inseto("Borboleta", 2.5, 6);
         Planta planta = new Planta("Ficus lyrata", 2.0, "Florífera");
+        Filme filme = new Filme("O Senhor dos Anéis", "Fantasia", 180);
 
 
         //teste dos métodos das classes
@@ -30,6 +32,7 @@ public class Main {
         testarLustre(lustre);
         testarInseto(inseto);
         testarPlanta(planta);
+        testarFilme(filme);
 
 
     }
@@ -80,5 +83,12 @@ public class Main {
         planta.crescer(0.5);
         planta.fazerFotossintese();
         planta.produzirFlor();
+    }
+    //metodo para testar a classe Filme
+    public static void testarFilme(Filme filme) {
+        System.out.println("\nTestando a classe Filme:");
+        filme.exibirInformacoes();
+        filme.reproduzir();
+        filme.avaliar(8.5);
     }
 }
