@@ -9,11 +9,7 @@ import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
 import com.modelagem.modelo.Filme;
 import com.modelagem.modelo.Gato;
-
-
-import java.util.Scanner;
-
-
+import com.modelagem.modelo.Disciplina;
 import java.util.Scanner;
 
 public class TestaClasse {
@@ -31,6 +27,7 @@ public class TestaClasse {
         Planta planta = new Planta("Rosa gallica", 1.2, "Florífera");
         Filme filme = new Filme("Matrix", "Ficção Científica", 136);
         Gato gato = new Gato("Tom", 5, "Cinza");
+        Disciplina disciplina = new Disciplina("Química", 100, "Exatas");
 
 
         int opcao;
@@ -46,7 +43,8 @@ public class TestaClasse {
             System.out.println("7. Testar Planta");
             System.out.println("8. Testar Filme");
             System.out.println("9. Testar Gato");
-            System.out.println("10. Sair");
+            System.out.println("10. Testar Disciplina");
+            System.out.println("11. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
@@ -80,12 +78,15 @@ public class TestaClasse {
                     testarGato(gato);
                     break;
                 case 10:
+                    testarDisciplina(disciplina);
+                    break;
+                case 11:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 10);
+        } while (opcao != 11);
 
         scanner.close();
     }
@@ -140,10 +141,17 @@ public class TestaClasse {
         filme.reproduzir();
         filme.avaliar(9.0);
     }
-    //meodo para testar a classe Gato
+    //metodo para testar a classe Gato
     public static void testarGato(Gato gato) {
         gato.miar();
         gato.brincar();
         gato.comer("peixe");
+    }
+    //metodo para testar a classe Disciplina
+    public static void testarDisciplina(Disciplina disciplina) {
+        disciplina.exibirInformacoes();
+        disciplina.associarProfessor("Professor Maria");
+        double notaFinal = disciplina.calcularNotaFinal();
+        System.out.println("Nota final calculada: " + notaFinal);
     }
 }
