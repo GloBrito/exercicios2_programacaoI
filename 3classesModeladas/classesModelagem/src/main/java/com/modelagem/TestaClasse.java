@@ -5,6 +5,7 @@ import com.modelagem.modelo.Caneta;
 import com.modelagem.modelo.Catedral;
 import com.modelagem.modelo.Pintura;
 import com.modelagem.modelo.Lustre;
+import com.modelagem.modelo.Inseto;
 
 
 import java.util.Scanner;
@@ -20,6 +21,7 @@ public class TestaClasse {
         Catedral catedral = new Catedral("Sagrada Família", "Barcelona", 12000);
         Pintura pintura = new Pintura("verde", "látex", 40.0);
         Lustre lustre = new Lustre("vidro", 60, "dourado");
+        Inseto inseto = new Inseto("Formiga", 0.01, 6);
 
 
         int opcao;
@@ -54,12 +56,17 @@ public class TestaClasse {
                     testarLustre(lustre);
                     break;
                 case 6:
+                    testarInseto(inseto);
+                    break;
+                case 7:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 5);
+        } while (opcao != 7);
+
+        scanner.close();
     }
 
     //metodo para testar a classe Bolo
@@ -93,5 +100,11 @@ public class TestaClasse {
         lustre.acender();
         lustre.ajustarBrilho(5);
         lustre.apagar();
+    }
+    //metodo para testar a classe Inseto
+    public static void testarInseto(Inseto inseto) {
+        inseto.mover();
+        inseto.emitirSom();
+        inseto.alimentar("folhas");
     }
 }
