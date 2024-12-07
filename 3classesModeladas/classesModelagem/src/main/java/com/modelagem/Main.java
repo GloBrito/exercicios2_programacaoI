@@ -6,6 +6,7 @@ import com.modelagem.modelo.Catedral;
 import com.modelagem.modelo.Pintura;
 import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
+import com.modelagem.modelo.Planta;
 
 
 public class Main {
@@ -18,6 +19,7 @@ public class Main {
         Pintura pintura = new Pintura("branca", "acrílica", 30.0);
         Lustre lustre = new Lustre("vidro", 60, "dourado");
         Inseto inseto = new Inseto("Borboleta", 2.5, 6);
+        Planta planta = new Planta("Ficus lyrata", 2.0, "Florífera");
 
 
         //teste dos métodos das classes
@@ -27,6 +29,7 @@ public class Main {
         testarPintura(pintura);
         testarLustre(lustre);
         testarInseto(inseto);
+        testarPlanta(planta);
 
 
     }
@@ -70,5 +73,12 @@ public class Main {
         inseto.mover();
         inseto.emitirSom();
         inseto.alimentar("néctar de flores");
+    }
+    //metodo para testar a classe Planta
+    public static void testarPlanta(Planta planta) {
+        System.out.println("\nTestando a classe Planta:");
+        planta.crescer(0.5);
+        planta.fazerFotossintese();
+        planta.produzirFlor();
     }
 }
