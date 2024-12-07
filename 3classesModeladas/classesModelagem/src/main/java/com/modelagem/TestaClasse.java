@@ -7,6 +7,8 @@ import com.modelagem.modelo.Pintura;
 import com.modelagem.modelo.Lustre;
 import com.modelagem.modelo.Inseto;
 import com.modelagem.modelo.Planta;
+import com.modelagem.modelo.Filme;
+
 
 import java.util.Scanner;
 
@@ -26,6 +28,7 @@ public class TestaClasse {
         Lustre lustre = new Lustre("vidro", 60, "dourado");
         Inseto inseto = new Inseto("Formiga", 0.01, 6);
         Planta planta = new Planta("Rosa gallica", 1.2, "Florífera");
+        Filme filme = new Filme("Matrix", "Ficção Científica", 136);
 
 
         int opcao;
@@ -39,7 +42,8 @@ public class TestaClasse {
             System.out.println("5. Testar Lustre");
             System.out.println("6. Testar Inseto");
             System.out.println("7. Testar Planta");
-            System.out.println("8. Sair");
+            System.out.println("8. Testar Filme");
+            System.out.println("9. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
@@ -67,12 +71,15 @@ public class TestaClasse {
                     testarPlanta(planta);
                     break;
                 case 8:
+                    testarFilme(filme);
+                    break;
+                case 9:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 8);
+        } while (opcao != 9);
 
         scanner.close();
     }
@@ -120,5 +127,11 @@ public class TestaClasse {
         planta.crescer(0.3);
         planta.fazerFotossintese();
         planta.produzirFlor();
+    }
+    //metodo para testar a classe Filme
+    public static void testarFilme(Filme filme) {
+        filme.exibirInformacoes();
+        filme.reproduzir();
+        filme.avaliar(9.0);
     }
 }
